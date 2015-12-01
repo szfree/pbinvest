@@ -46,6 +46,8 @@ def build_db():
     sql = 'create table stockdata (id varchar(20), date varchar(10), ttmpe float, adjclose float, pe float, pb float, pbavghistory float, pbavg3 float, pbavg4 float, pbavg5 float, pbavg6 float)'
     cu.execute(sql)
 
+    sql = 'create table stockpb(id varchar(20), date varchar(10), avgpb float, avgyear integer, avgdelta float, deltamax float, deltamin float, delta10P float, delta20p float, delta80p float, delta90p)'
+
     sql =' create index idx_iddate on stockdata(id, date)'
     cu.execute(sql)
 
